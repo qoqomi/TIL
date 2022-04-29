@@ -33,7 +33,7 @@ Github에 READMe.md 파일을 작성하다보면 이미지 파일을 넣고 싶�
 1. image폴더 만들기!
 
 - **error**>**error01.md**와 **image** 파일을 같이 생성했다.
-  ![](https://velog.velcdn.com/images/energyy044/post/2a09bd42-5438-4db0-8df2-8dcbc0b2912b/image.png)
+  ![error01-1](./image/error02-3-01.png)
 
 2. image 파일에 넣고 싶은 파일을 넣는다.
 
@@ -44,11 +44,12 @@ Github에 READMe.md 파일을 작성하다보면 이미지 파일을 넣고 싶�
 4. !를 넣지 않았을 때
 
 - 맨 앞에 !가 없을 때는 아래와 같이 출력된다.
-  ![](https://velog.velcdn.com/images/energyy044/post/d6d90ff7-0e19-45e3-bcdf-ab5cfbe5fa03/image.png)![](https://velog.velcdn.com/images/energyy044/post/fa74e81b-beed-4bea-bb71-b926b2757fad/image.png)
+  ![error01-1](./image/error02-3-02.png)
+  ![error01-1](./image/error02-3-03.png)
 
 5. !를 넣으면
-   ![](https://velog.velcdn.com/images/energyy044/post/3fee64b5-c94e-420e-aaba-92a67b7dde29/image.png)
-   ![](https://velog.velcdn.com/images/energyy044/post/43fcb21c-d7b0-4556-ad8e-ed01418f6cc1/image.png)
+   ![error01-1](./image/error02-3-04.png)
+   ![error01-1](./image/error02-3-05.png)
 
 - 출처
   [하이! 제니스](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=chandong83&logNo=220812226888)
