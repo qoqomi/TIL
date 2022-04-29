@@ -13,4 +13,4 @@ Github에 READMe.md 파일을 작성하다보면 이미지 파일을 넣고 싶�
 
 **[이미지 이름](이미지 URL)**
 
-[google](./image/google.png)
+![google](./image/google.png)
