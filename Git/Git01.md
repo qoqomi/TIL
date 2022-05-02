@@ -27,6 +27,9 @@ GUI(Graphical User Interface) : ekfm
 > `.git` 폴더를 지우면 git내역이 삭제됨
 > 맥에서 숨김파일보기 : `commend`+`shift`+`m`
 
+- 해당 파일을 관리할까요 ?
+  `git status`
+
 # Reference
 
 [인프런- 제대로 파는 Git & GitHub - by 얄코](https://www.inflearn.com/course/%EC%A0%9C%EB%8C%80%EB%A1%9C-%ED%8C%8C%EB%8A%94-%EA%B9%83/dashboard)
