@@ -10,12 +10,12 @@ GUI(Graphical User Interface) : ekfm
 ## 2. Terminal 최초설정
 
 - 터미널 프로그램에서 아래 명령어 실행
-  `git --version`
-  `git config --global user.name "(본인 이름)"`
-  `git config --global user.email "(본인 이메일)"`
+  `git --version` <br>
+  `git config --global user.name "(본인 이름)"`<br>
+  `git config --global user.email "(본인 이메일)"`<br>
 - 아래의 명령어들로 확인
-  `git config --global user.name`
-  `git config --global user.email`
+  `git config --global user.name`<br>
+  `git config --global user.email`<br>
 
 ## 3. 프로젝트 생성 & Git 관리 시작
 
