@@ -35,24 +35,24 @@ process.stdin.on("data", (data) => {
 ### 다른풀이
 
 ```js
-process.stdin.setEncoding('utf8');
-process.stdin.on('data', data => {
-    const n = data.split(" ");
-    const a = Number(n[0]), b = Number(n[1]);
-    let row='';
-    let square = '';
-    for(let i=0; i< a; i++){
-        row = row+"*";
-    }
-    for(let j=0; j < b; j++){
-         square = square + row + '\n'
-
-    }
-console.log(square)
-
+process.stdin.setEncoding("utf8");
+process.stdin.on("data", (data) => {
+  const n = data.split(" ");
+  const a = Number(n[0]),
+    b = Number(n[1]);
+  let row = "";
+  let square = "";
+  for (let i = 0; i < a; i++) {
+    row = row + "*";
+  }
+  for (let j = 0; j < b; j++) {
+    square = square + row + "\n";
+  }
+  console.log(square);
 });
-개인적으로 이 풀이 나한테 너무 어려웠다 그래서 다른 풀이를 찾아보았다.. !
 ```
+
+- 개인적으로 이 풀이 나한테 너무 어려웠다 그래서 다른 풀이를 찾아보았다.. !
 
 ```js
 process.stdin.setEncoding("utf8");
@@ -64,8 +64,7 @@ process.stdin.on("data", (data) => {
   const c = "*".repeat(a); // a개만큼 별찍기
   //// 반복문을 사용하여 b만큼 돌려준다음
   for (i = 0; i < b; i++) {
-    console.log(c); // 반복문을 사용하여 b만큼 돌려준다음
-  }
+    console.log(c);
 });
 ```
 
@@ -139,7 +138,7 @@ function evenOrOdd(num) {
 
 - 이건 삼항연산자라고 하는데 ? 전이 조건 : 앞이 true일때 뒤에는 false일때 실행되는 코드이다.
 
-> 💡 javascript는 7가지 False! => 0,-0, NaN,Null,defined, false,''
+> 💡 javascript는 7가지 False! => 0,-0, NaN,Null,defined, false,''<br>
 > 💡 NaN은 0/0 이라고 한다. 또 0/0은 **_'숫자가 아니다!'_** 를 의미한다.
 
 ---
