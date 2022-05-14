@@ -117,29 +117,10 @@ function solution(arr) {
 }
 ```
 
-## 9. [핸드폰 번호 가리기](https://programmers.co.kr/learn/courses/30/lessons/12948)
+---
 
-### 문제설명
+## reduce 함수
 
-- 프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
-- 전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 \*으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
-
-### 제한사항
-
-- phone_number는 길이 4 이상, 20이하인 문자열입니다.
-
-### 👍🏻 풀이
-
-```js
-function solution(phone_number) {
-  var answer = "";
-  for (let i = 0; i < phone_number.length; i++) {
-    if (i >= phone_number.length - 4) {
-      answer += phone_number[i];
-    } else {
-      answer += "*";
-    }
-  }
-  return answer;
-}
-```
+- 찾아보다가 reduce함수가 좋다고 조원분도 추천해서 보내주셨다.
+- reduce 함수는 연산문제 제외하고도 다른 곳에도 많이 쓰인다는데 아직 거기까진 이해할 수 없었다..ㅋㅋ!!
+- 이와 같이 sort, every, some, find, findIndex, includes도 다 reduce로 구현 가능합니다. reduce가 이들 모두의 아버지였던 것입니다. ㅠㅠ 라면서 보내주신 [reduce의 링크](https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d)
