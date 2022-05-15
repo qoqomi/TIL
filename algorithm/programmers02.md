@@ -26,6 +26,15 @@ function solution(numbers) {
 }
 ```
 
+### 다른풀이
+
+```js
+function solution(numbers) {
+  return 45 - numbers.reduce((acc, acr) => acc + acr);
+  // number.reduce((acc,acr) => (acr+acc)) 괄호가 어떻게 들어가는지 잘 보고
+}
+```
+
 ### 문제풀이
 
 1. `.includes()` : 특정 문자열이 특정 문자열을 포함하는지 확인하는 메서드
