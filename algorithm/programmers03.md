@@ -123,25 +123,18 @@ int arr[3][4] =
 
 - 함수 쓰임새를 설명하다가 이해가 가는 게 있어서 가져와본다.
 
-```js
-const nums = [1, 2, 3]; // 1,2,3을 배열에 넣는다.
-let newNums = []; // 비어있는 배열
-for (var i = 0; i < nums.length; i++) {
-  newNums.push(nums[i] * 2); // nums길이만큼 i가 for문에서 돌고 끝난다. 조건은 num[i]를 *2 push (nums.length는 1부터 시작하므로 배열길이를 셈할때는 '<' 를 기본으로 사용한다.)
-}
-console.log(newNums);
-
-// Result
-[2, 4, 6];
-```
-
-- 위 함수를 map으로 바꾸면
-
-```js
-const nums = [1, 2, 3]; // 1,2,3을 배열에 넣는다.
-const newNums = nums.map((x) => x * 2);
-console.log(nuwNums);
-```
+- map 함수의 쓰임새
+  ```js
+  var num = [1,2,3,4]
+  arr1.map( ()=> ) // 괄호를 먼저 만들어주고
+  arr1.map( (values,index)=> ) // values는 num 배열안에 하나하나의 item을 가져온다. 이게 callback함수라는거고 values, index는 변수라 다른 값을 넣어도 상관없다.
+  ```
+  - 따라서
+  ```js
+   var num = [1,2,3,4]
+   var sample = b.map(values = > values*2)
+   // 이러면 출력값이 [2, 4, 6, 8] 이 된다.
+  ```
 
 ## 11. [x만큼 간격이 있는 n개의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12954)
 
@@ -167,7 +160,19 @@ function solution(x, n) {
 }
 ```
 
-### 배운점
+### 다른풀이
+
+```js
+function solution(x, n) {
+  return Array(n)
+    .fill(x)
+    .map((v, i) => (i + 1) * v);
+  // 1. Array(n)의 배열 생성 -> fill로 x값을 채워준다
+  // 2. map(v)->callbac함수로 x값을 불러오고
+  // 3. i는 indexr값
+  // 4. i는 0 부터 시작하므로 +1해주고 i*v 로 retrun
+}
+```
 
 ## 12. [부족한 금액 계산하기](https://programmers.co.kr/learn/courses/30/lessons/82612)
 
@@ -197,7 +202,26 @@ function solution(price, money, count) {
 }
 ```
 
-### 배운점
+### [가우스](https://velog.io/@elinapark/%EA%B0%80%EC%9A%B0%EC%8A%A4-%EA%B3%B5%EC%8B%9D%EB%93%B1%EC%B0%A8%EC%88%98%EC%97%B4%EC%9D%98-%ED%95%A9)로 한다면.. ?
+
+1. 이용료 price , 횟수 count 내가 가진 돈 money 에 가우스를 사용하면
+   이용료 _ 마지막 이용횟수 _ (마지막 이용횟수 + 1) / 2 는 이용하는 지불값이고
+   거기서 내 돈을 빼준다.
+
+```js
+function solution(price, money, count) {
+  const result = (price * count * (count + 1)) / 2 - money;
+}
+```
+
+2. 금액이 부족하지 않으면 0 으로 return하라함. 부족하지 않다는건 내 돈이 많다는거니까
+
+```js
+//result > 0 이면 true 아니면 0
+return result > 0 ? result : 0;
+```
+
+- 이해안감 .. ㅋ
 
 1. 삼항연산자
    `조건 ? true : false`
@@ -219,22 +243,97 @@ function solution(price, money, count) {
 
 ```
 
-### 배운점
+## 14. [나누어 떨어지는 숫자 배열](https://programmers.co.kr/learn/courses/30/lessons/12910)
 
-function solution(arr, divisor) {
-var answer = [];
-for (let i=0; i<arr.length; i++) {
-// divisor로 나누어 떨어지면 배수이므로 값을 담기
-if (arr[i] % divisor == 0) {
-answer.push(arr[i])
-}
-}
-// 삼항연산자 배열에 값이 없으면 [-1] 반환. 값이 있을 경우 오름차순 정렬하여 반환.
-return answer.length == 0? [-1]:answer.sort((a,b)=>a-b);
-}
+### 문제설명
 
+- array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요. divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
+
+### 제한사항
+
+- arr은 자연수를 담은 배열입니다.
+- 정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.
+- divisor는 자연수입니다.
+- array는 길이 1 이상인 배열입니다.
+
+### 👎🏻 풀이
+
+```js
 function solution(arr, divisor) {
-const answer = arr.filter((num) => num % divisor === 0);
-return answer.length === 0 ? [-1] : answer.sort((a, b) => a - b);
+  var answer = [];
+  for (let i = 0; i < arr.length; i++) {
+    // i는 arr의 index
+    if (arr[i] % divisor === 0) {
+      // 만약 arr의 i번째의 원소가 divisor로 나누었을 때 0이라면
+      answer.push(arr[i]); // answer에 넣어준다.
+    }
+  }
+  // 주의할점은  나머지 원소는 버려지기 때문에 담을 필요가 없어 for문을 나가야 한다는 거다 .
+  answer.sort(function (a, b) {
+    return a - b;
+  }); //sort로 오름차순 선언
+  if (answer.length === 0) {
+    // 새로운 if문으로 answer값이 없을때 -1 push
+    answer.push(-1);
+  }
+  return answer;
 }
+```
+
+### 다른풀이
+
+```js
+function solution(arr, divisor) {
+  var answer = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % divisor === 0) answer.push(arr[i]);
+  }
+
+  return answer.length > 0 ? answer.sort((a, b) => a - b) : [-1];
 }
+```
+
+### 배울점
+
+1. sort 함수
+
+```js
+//오름차순
+변수.sort(function (a, b) {
+  return a - b;
+});
+//내림차순
+변수.sort(function (a, b) {
+  return b - a;
+});
+```
+
+---
+
+### 배열요소를 곱해서 모두 더하기(number) vs 배열 요소마다 곱하기(배열 )
+
+```js
+function solution(a, b) {
+  //var answer = [];
+  var sum = 0;
+  for (let i = 0; i < a.length; i++) {
+    sum = sum + a[i] * b[i];
+  }
+
+  return sum;
+}
+```
+
+```js
+function solution(a, b) {
+  //var answer = [];
+  var sum = [];
+  for (let i = 0; i < a.length; i++) {
+    sum.push(a[i] * b[i]);
+  }
+
+  return sum;
+}
+```
+
+---
