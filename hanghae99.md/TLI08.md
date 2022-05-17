@@ -2,17 +2,17 @@
 
 자세한 내용은 [벨로그:항해일지 시리즈 참고](https://velog.io/@energyy044/series)
 
-# ⚡️ cs 스터디 시작
+### ⚡️ cs 스터디 시작
 
 - 8명이서 cs 스터디 시작했다.
 
 ---
 
-# ✏️ 알고리즘
+### ✏️ 알고리즘
 
-## var, let 변수
+1. var, let 변수
 
-## 배열 input 함수의 견해
+2. 배열 input 함수의 견해
 
 배열 Input함수를 이해할 수가 없어서 . .
 
@@ -40,9 +40,9 @@ function solution(s) {
 
 ```
 
-## 숫자를 split으로 배열만들기
+3. 숫자를 split으로 배열만들기
 
-### **1. 숫자를 문자로 변환 후 배열로 만들기 ( split이용 )**
+4.# **1. 숫자를 문자로 변환 후 배열로 만들기 ( split이용 )**
 
 타입이 숫자(number)인 경우 split을 사용할 수 없기 때문에
 
@@ -54,9 +54,7 @@ function solution(s) {
 var answer = (n + "").split();
 ```
 
-# 💭 기술매니저님과 멘토링
-
-## 안지현 기술 매니저님과 멘토 이후
+### 💭 안지현 기술매니저님과 멘토링
 
 1. 항해 안에서 어떤 사람이 될 것인가 ?
 2. css 안해놓으면 걸림돌 ! 잡고가라
@@ -66,3 +64,15 @@ var answer = (n + "").split();
 6. [엘리언니 js 배열](https://www.youtube.com/watch?v=3CUjtKJ7PJg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=11) : 배열 메소드를 많이 사용한다고 하니 꼭 보고 가도록 추천해주심
 
 - [https://www.youtube.com/watch?v=3CUjtKJ7PJg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=10](https://www.youtube.com/watch?v=3CUjtKJ7PJg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=10)
+
+### 오늘 한 것
+
+1. 알고리즘 25번까지 풀고 정리
+
+### 내일 목표
+
+1. 알고리즘 32번까지 풀기
+2. 노션에 업데이트 한 거 벨로그 + 깃헙에 공유
+3. 내일은 알고리즘 시험
+
+### 노션 다시보기

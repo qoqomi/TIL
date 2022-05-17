@@ -240,7 +240,11 @@ return result > 0 ? result : 0;
 ### 👎🏻 풀이
 
 ```js
-
+function solution(a, b) {
+  var date = new Date(2016, a - 1, b);
+  console.log(date.toString()); //Tue May 24 2016 00:00:00 GMT+0900 (Korean Standard Time)
+  return date.toString().slice(0, 3).toUpperCase();
+}
 ```
 
 ## 14. [나누어 떨어지는 숫자 배열](https://programmers.co.kr/learn/courses/30/lessons/12910)
