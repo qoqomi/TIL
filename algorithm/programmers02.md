@@ -100,6 +100,15 @@ function solution(absolutes, signs) {
 - `i <= absolutes.length;`일 때 작동이 되지 않는다
 - 왜... 냐면 이유를 알았다. .`length`는 1부터 1,2,3,4 이렇게 1부터 시작하고 i는 초기값이 0 이므로 `=<`를 사용하게 되면 1234 01234 의 차이를 가지게 된다.
 
+### 새로운 풀이 
+```js
+function solution(absolutes, signs) {
+  return absolutes.reduce((acc,acr,idx)=> acc + acr*(signs[idx] ? 1 : -1),0)
+}
+```
+- 이런 경우에는 reduce를 사용하는데 누적기 역할을 주로 하며 누적하여 계산해준다. accr값을 지정해놨었는데 그건 큰 5산이였음
+acc값이 초기값으로 0 이 들어가고 그 뒤에 해당하는 부분부터 acr로 누적되어 계산됨을 알고 있어야한다.
+
 ## 8. [평균 구하기](https://programmers.co.kr/learn/courses/30/lessons/12944)
 
 ### 문제설명
